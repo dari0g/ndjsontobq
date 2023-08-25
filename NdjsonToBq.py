@@ -41,11 +41,11 @@ class NdjsonToBq:
             return "DATE"
         else:
             try:
-                datetime.strptime(value, "%Y-%m-%dT%H:%M:%S%z")  # Try to parse as datetime
+                datetime.strptime(value, "%Y-%m-%dT%H:%M:%S%z") 
                 return "TIMESTAMP"
             except ValueError:
                 try:
-                    datetime.strptime(value, "%Y-%m-%d")  # Try to parse as date
+                    datetime.strptime(value, "%Y-%m-%d")
                     return "DATE"
                 except ValueError:
                     return "STRING"
